@@ -4,8 +4,10 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
 import HistoryScreen from '../screens/HistoryScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+
+import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 const HomeStack = createStackNavigator({
@@ -13,7 +15,7 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Início',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -25,6 +27,44 @@ HomeStack.navigationOptions = {
     />
   ),
 };
+
+const HistoryStack = createStackNavigator({
+  History: HistoryScreen,
+});
+
+HistoryStack.navigationOptions = {
+  tabBarLabel: 'Histórico',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-time${focused ? '' : '-outline'}`
+          : 'md-time'
+      }
+    />
+  ),
+};
+
+const ProfileStack = createStackNavigator({
+  Profile: ProfileScreen,
+});
+
+ProfileStack.navigationOptions = {
+  tabBarLabel: 'Perfil',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-person${focused ? '' : '-outline'}`
+          : 'md-person'
+      }
+    />
+  ),
+};
+
+//TODO(Erase Links and Settings from Project)
 
 const LinksStack = createStackNavigator({
   Links: LinksScreen,
@@ -39,24 +79,6 @@ LinksStack.navigationOptions = {
         Platform.OS === 'ios'
           ? `ios-link${focused ? '' : '-outline'}`
           : 'md-link'
-      }
-    />
-  ),
-};
-
-const HistoryStack = createStackNavigator({
-  History: HistoryScreen,
-});
-
-HistoryStack.navigationOptions = {
-  tabBarLabel: 'History',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-time${focused ? '' : '-outline'}`
-          : 'md-time'
       }
     />
   ),
@@ -82,7 +104,8 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  //LinksStack,
   HistoryStack,
-  SettingsStack,
+  ProfileStack,
+  //LinksStack,
+  //SettingsStack,
 });
