@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export default class HomeScreen extends React.Component {
+export default class HistoryScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Histórico',
   };
 
   render() {
@@ -11,8 +11,7 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.getStartedContainer}>
-            <Text style={styles.getStartedText}>Home Page</Text>
-            <Text>Essa é a página inicial. </Text>
+            <Text>Essa é a página onde são mostradas as atividades recentes do usuário. </Text>
           </View>
         </ScrollView>
       </View>
