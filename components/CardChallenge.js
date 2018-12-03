@@ -23,7 +23,7 @@ export default class CardChallenge extends React.Component {
             style={styles.cardButton}
             mode="contained"
             color="#004488"
-            onPress={() => console.log('Pressed')}
+            onPress={() => console.log('Pressed Challenge Card Button')}
           >
             FEITO! RECEBA SUA RECOMPENSA
           </Button>

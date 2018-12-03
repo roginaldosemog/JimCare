@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image, Text, ProgressBarAndroid } from 'react-native';
 import img from '../assets/images/icon.png';
 
-export default class UserHeader extends React.Component {
+export default class HeaderUser extends React.Component {
   render() {
     return (
       <View style={styles.header}>

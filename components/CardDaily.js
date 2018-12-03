@@ -23,7 +23,7 @@ export default class CardDaily extends React.Component {
             style={styles.cardButton}
             mode="contained"
             color="#004488"
-            onPress={() => console.log('Pressed')}
+            onPress={() => console.log('Pressed Daily Card Button')}
           >
             MARCAR ATIVIDADES FEITAS HOJE
           </Button>

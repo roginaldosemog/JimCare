@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
-import UserHeader from '../components/UserHeader';
+import HeaderUser from '../components/HeaderUser';
 import CardDaily from '../components/CardDaily';
 import CardChallenge from '../components/CardChallenge';
 
@@ -13,7 +13,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <UserHeader/>
+        <HeaderUser/>
         <View style={styles.contentContainer}>
           <CardDaily/>
           <CardChallenge/>
