@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import Header from '../components/Header';
+import UserHeader from '../components/UserHeader';
 
 export default class HistoryScreen extends React.Component {
   static navigationOptions = {
@@ -10,7 +10,7 @@ export default class HistoryScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header/>
+        <UserHeader/>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.getStartedContainer}>
             <Text style={styles.getStartedText}>History Page</Text>

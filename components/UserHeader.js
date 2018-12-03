@@ -2,18 +2,18 @@ import React from 'react';
 import { StyleSheet, View, Image, Text, ProgressBarAndroid } from 'react-native';
 import img from '../assets/images/icon.png';
 
-export default class Header extends React.Component {
+export default class UserHeader extends React.Component {
   render() {
     return (
       <View style={styles.header}>
         <Image style={styles.image} source={img}/>
         <View style={styles.headerContainer}>
           <Text style={styles.name}>Igor Aragão</Text>
-          <ProgressBarAndroid style={styles.bar}
+          <ProgressBarAndroid
             styleAttr="Horizontal"
             indeterminate={false}
             progress={0.8}
-            color='#28d'
+            color='#2288DD'
           />
         <Text style={styles.level}>LEVEL 2</Text>
         </View>
@@ -24,7 +24,6 @@ export default class Header extends React.Component {
 
 const styles = StyleSheet.create({
   header: {
-    // flex: 1,
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: '#048',
@@ -33,14 +32,11 @@ const styles = StyleSheet.create({
     paddingBottom: 8
   },
   image: {
-    width: 100,
-    height: 100,
-    margin: 10
+    width: 96,
+    height: 96,
+    marginVertical: 16,
   },
   headerContainer: {
-    // borderWidth: 1,
-    // borderColor: '#ddd',
-    // alignItems: 'center',
     justifyContent: 'center',
     width: '60%',
   },
@@ -51,7 +47,6 @@ const styles = StyleSheet.create({
   },
   level: {
     color: '#fff',
-    fontWeight: '500',
+    fontWeight: '400',
   },
-  bar: {},
 });
