@@ -1,16 +1,19 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import Header from '../components/Header';
 
 export default class ProfileScreen extends React.Component {
   static navigationOptions = {
-    title: 'Perfil',
+    header: null,
   };
 
   render() {
     return (
       <View style={styles.container}>
+        <Header/>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.getStartedContainer}>
+            <Text style={styles.getStartedText}>Profile Page</Text>
             <Text>Essa é a página onde são mostrados dados e opções de gerenciamento da conta do usuário. </Text>
           </View>
         </ScrollView>
