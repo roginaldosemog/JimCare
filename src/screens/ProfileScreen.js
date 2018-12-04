@@ -52,7 +52,7 @@ export default class ProfileScreen extends React.Component {
             style={styles.listItem}
             left={props => <List.Icon {...props} icon="exit-to-app" />}
             title="Logout"
-            onPress={() => console.log('Pressed Logout Button')}
+            onPress={this._logOut}
             />
           <Divider />
         </ScrollView>
@@ -64,6 +64,11 @@ export default class ProfileScreen extends React.Component {
     console.log('Pressed Avatar Set Button');
     this.props.navigation.navigate('Avatar');
   };
+
+  _logOut = () => {
+    console.log('Pressed Logout Button');
+    this.props.navigation.navigate('Auth');
+  }
 }
 
 const styles = StyleSheet.create({
