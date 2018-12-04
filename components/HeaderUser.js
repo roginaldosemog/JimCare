@@ -14,8 +14,8 @@ export default class HeaderUser extends React.Component {
             indeterminate={false}
             progress={0.8}
             color='#2288DD'
-          />
-        <Text style={styles.level}>LEVEL 2</Text>
+            />
+          <Text style={styles.level}>LEVEL 2</Text>
         </View>
       </View>
     );
