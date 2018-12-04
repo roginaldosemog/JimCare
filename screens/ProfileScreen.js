@@ -34,7 +34,7 @@ export default class ProfileScreen extends React.Component {
             style={styles.listItem}
             left={props => <List.Icon {...props} icon="face" />}
             title="Escolher Avatar"
-            onPress={() => console.log('Pressed Avatar Set Button')}
+            onPress={this._openAvatarScreen}
             />
           <Divider />
           <List.Item
@@ -76,6 +76,11 @@ export default class ProfileScreen extends React.Component {
       </View>
     );
   }
+
+  _openAvatarScreen = () => {
+    console.log('Pressed Avatar Set Button');
+    this.props.navigation.navigate('Avatar');
+  };
 }
 
 const styles = StyleSheet.create({
