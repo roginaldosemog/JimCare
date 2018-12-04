@@ -8,15 +8,6 @@ export default class ProfileScreen extends React.Component {
     header: null,
   };
 
-  state = {
-    expanded: true
-  }
-
-  _handlePress = () =>
-  this.setState({
-    expanded: !this.state.expanded
-  });
-
   render() {
     return (
       <View style={styles.container}>

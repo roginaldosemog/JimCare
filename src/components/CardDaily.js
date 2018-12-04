@@ -7,8 +7,9 @@ import {
   Card,
   Button
 } from 'react-native-paper';
+import { withNavigation } from 'react-navigation';
 
-export default class CardDaily extends React.Component {
+class CardDaily extends React.Component {
   render() {
     return (
       <Card style={styles.card}>
@@ -23,7 +24,7 @@ export default class CardDaily extends React.Component {
             style={styles.cardButton}
             mode="contained"
             color="#004488"
-            onPress={() => console.log('Pressed Daily Card Button')}
+            onPress={this._openDailyScreen}
           >
             MARCAR ATIVIDADES FEITAS HOJE
           </Button>
@@ -31,6 +32,11 @@ export default class CardDaily extends React.Component {
       </Card>
     );
   }
+
+  _openDailyScreen = () => {
+    console.log('Pressed Daily Button');
+    this.props.navigation.navigate('Daily');
+  };
 }
 
 const styles = StyleSheet.create({
@@ -55,3 +61,5 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 });
+
+export default withNavigation(CardDaily);

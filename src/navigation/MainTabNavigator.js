@@ -7,9 +7,11 @@ import HomeScreen from '../screens/HomeScreen';
 import HistoryScreen from '../screens/HistoryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import AvatarScreen from '../screens/AvatarScreen';
+import DailyScreen from '../screens/DailyScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
+  Daily: DailyScreen,
 });
 
 HomeStack.navigationOptions = {
