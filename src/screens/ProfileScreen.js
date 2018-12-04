@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   listItem: {
     backgroundColor: '#fdfdfd',
-    paddingVertical: 2,
+    paddingVertical: 0,
     paddingHorizontal: 6,
   },
 });
