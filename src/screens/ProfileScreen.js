@@ -22,14 +22,6 @@ export default class ProfileScreen extends React.Component {
       <View style={styles.container}>
         <HeaderUser />
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <Divider />
-          <List.Item
-            style={styles.listItem}
-            left={props => <List.Icon {...props} icon="directions-bike" />}
-            title="Definir Atividades"
-            onPress={() => console.log('Pressed Activities Set Button')}
-            />
-          <Divider />
           <List.Item
             style={styles.listItem}
             left={props => <List.Icon {...props} icon="face" />}
