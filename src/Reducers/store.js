@@ -3,8 +3,6 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import initialState from './initialState';
 import userReducer from './userReducer';
 
-
-
 const reducers = combineReducers({
 	user: userReducer;
 

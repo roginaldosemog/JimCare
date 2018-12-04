@@ -1,5 +1,9 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, Card, Title, Paragraph } from 'react-native-paper';
+import HeaderUser from '../components/HeaderUser';
+import CardDaily from '../components/CardDaily';
+import CardChallenge from '../components/CardChallenge';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -9,12 +13,11 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.getStartedContainer}>
-            <Text style={styles.getStartedText}>Home Page</Text>
-            <Text>Essa é a página inicial. </Text>
-          </View>
-        </ScrollView>
+        <HeaderUser/>
+        <View style={styles.contentContainer}>
+          <CardDaily/>
+          <CardChallenge/>
+        </View>
       </View>
     );
   }
@@ -23,19 +26,9 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
   contentContainer: {
-    paddingTop: 30,
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
+    flex: 1,
+    padding: 4,
   },
 });

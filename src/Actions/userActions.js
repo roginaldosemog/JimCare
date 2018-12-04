@@ -3,9 +3,6 @@ import {
   SET_USERNAME,
 } from './types';
 
-
-
-
 export const setUsername = user => ({
   type: SET_USERNAME,
   payload: user,

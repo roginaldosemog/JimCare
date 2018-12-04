@@ -1,18 +1,19 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import HeaderUser from '../components/HeaderUser';
+import CardHistory from '../components/CardHistory';
 
 export default class HistoryScreen extends React.Component {
   static navigationOptions = {
-    title: 'Histórico',
+    header: null,
   };
 
   render() {
     return (
       <View style={styles.container}>
+        <HeaderUser/>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.getStartedContainer}>
-            <Text>Essa é a página onde são mostradas as atividades recentes do usuário. </Text>
-          </View>
+          <CardHistory/>
         </ScrollView>
       </View>
     );
@@ -22,19 +23,9 @@ export default class HistoryScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
   contentContainer: {
-    paddingTop: 30,
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
+    flex: 1,
+    padding: 4,
   },
 });
