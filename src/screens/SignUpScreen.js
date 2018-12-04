@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Card, Button, TextInput, HelperText } from 'react-native-paper';
 
-export default class SignIn extends React.Component {
+export default class SignUpScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -19,19 +19,31 @@ export default class SignIn extends React.Component {
           style={styles.cardButton}
           mode="contained"
           color="#004488"
-          onPress={() => {
-            this.props.navigation.navigate('Main');
-          }}
+          onPress={this._signUp}
           >
-          SIGN IN
+          SIGN UP
+        </Button>
+
+        <Button
+          style={styles.cardButton}
+          mode="contained"
+          color="#004488"
+          onPress={this._backToSignIn}
+          >
+          BACK TO SIGN IN
         </Button>
       </View>
     );
   }
 
-  _signInClick = () => {
-    console.log('Pressed SignIn');
-    this.props.navigation.navigate('Daily');
+  _signUp = () => {
+    console.log('Pressed SignUp');
+    this.props.navigation.navigate('Main');
+  };
+
+  _backToSignIn = () => {
+    console.log('Pressed Back to SignIn');
+    this.props.navigation.goBack();
   };
 }
 
