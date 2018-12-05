@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Card, Button, TextInput, HelperText } from 'react-native-paper';
+// import { StyleSheet, View, Text } from 'react-native';
+// import { Card, Button, TextInput, HelperText } from 'react-native-paper';
+import { StyleSheet, View, Text, TextInput, Button, Alert } from 'react-native';
+import * as firebase from 'firebase';
 
 export default class ForgotPasswordScreen extends React.Component {
   static navigationOptions = {
@@ -13,22 +15,32 @@ export default class ForgotPasswordScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.wrapper}>
-        <Button
-          style={styles.cardButton}
-          mode="contained"
-          color="#004488"
-          onPress={this._backToSignIn}
-          >
-          DONE, SEND ME BACK TO SIGN IN
-        </Button>
+      <View style={{paddingTop:50, alignItems:"center"}}>
+
+        <Text>Forgot Password</Text>
+
+        <TextInput style={{width: 200, height: 40, borderWidth: 1}}
+          value={this.state.email}
+          onChangeText={(text) => { this.setState({email: text}) }}
+          placeholder="Email"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+          />
+
+        <Button title="Reset Password" onPress={this._resetPassword} />
       </View>
     );
   }
 
-  _backToSignIn = () => {
-    console.log('Pressed Back to SignIn');
-    this.props.navigation.goBack();
+  _resetPassword = () => {
+    console.log('Pressed Reset Password');
+    firebase.auth().sendPasswordResetEmail(this.state.email)
+    .then(() => {
+      Alert.alert("Password reset email has been sent.");
+    }, (error) => {
+      Alert.alert(error.message);
+    });
   };
 }
 

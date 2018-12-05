@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { List, Divider } from 'react-native-paper';
+import * as firebase from 'firebase';
 import HeaderUser from '../components/HeaderUser';
 
 export default class ProfileScreen extends React.Component {
@@ -66,8 +67,7 @@ export default class ProfileScreen extends React.Component {
   };
 
   _logOut = () => {
-    console.log('Pressed Logout Button');
-    this.props.navigation.navigate('Auth');
+    firebase.auth().signOut();
   }
 }
 
