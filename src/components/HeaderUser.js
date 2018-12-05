@@ -1,21 +1,34 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text, ProgressBarAndroid } from 'react-native';
 import img from '../assets/images/icon.png';
+import * as firebase from 'firebase';
 
 export default class HeaderUser extends React.Component {
+  constructor(props) {
+    super(props);
+
+    var user = firebase.auth().currentUser;
+
+    this.state = {
+      name: user.displayName,
+      xp: 0,
+      level: 0,
+    }
+  };
+
   render() {
     return (
       <View style={styles.header}>
         <Image style={styles.image} source={img}/>
         <View style={styles.headerContainer}>
-          <Text style={styles.name}>Igor Aragão</Text>
+          <Text style={styles.name}>{this.state.name}</Text>
           <ProgressBarAndroid
             styleAttr="Horizontal"
             indeterminate={false}
-            progress={0.8}
+            progress={this.state.xp}
             color='#2288DD'
             />
-          <Text style={styles.level}>LEVEL 2</Text>
+          <Text style={styles.level}>LEVEL {this.state.level}</Text>
         </View>
       </View>
     );

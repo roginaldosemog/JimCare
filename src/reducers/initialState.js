@@ -1,14 +1,10 @@
 const initialState = {
 	user: {
-		username: '' ,   
+		userName: '' ,
 		userLevel: 1,
-		currentXP: 0,
-		userHobbies: [],
+		userXP: 0,
+		userAvatar: 1,
 	},
-	hobbies: [
-		Futebol,
-		cinema,
-		caminhar],
 };
 
 export default initialState;

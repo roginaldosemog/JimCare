@@ -10,6 +10,7 @@ export default class SignUpScreen extends React.Component {
   };
 
   state = {
+    name: '',
     email: '',
     password: '',
     passwordConfirm: '',
@@ -20,6 +21,15 @@ export default class SignUpScreen extends React.Component {
       <View style={{paddingTop:50, alignItems:"center"}}>
 
         <Text>Signup</Text>
+
+        <TextInput style={{width: 200, height: 40, borderWidth: 1}}
+          value={this.state.name}
+          onChangeText={(text) => { this.setState({name: text}) }}
+          placeholder="Name"
+          autoCorrect={false}
+          />
+
+        <View style={{paddingTop:10}} />
 
         <TextInput style={{width: 200, height: 40, borderWidth: 1}}
           value={this.state.email}
@@ -66,11 +76,19 @@ export default class SignUpScreen extends React.Component {
     }
 
     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => {
-        
+    .then(() => {
+      var user = firebase.auth().currentUser;
+      user.updateProfile({
+        displayName: this.state.name,
+      }).then(() => {
+        console.log("Sucesso ao mandar nome");
       }, (error) => {
-        Alert.alert(error.message);
+        console.log(error.message);
       });
+
+    }, (error) => {
+      Alert.alert(error.message);
+    });
   };
 
   _backToSignIn = () => {
