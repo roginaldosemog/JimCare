@@ -2,6 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, Alert } from 'react-native';
 import { Card, Button } from 'react-native-paper';
 import img from '../assets/images/icon.png';
+import AvatarUser from '../components/AvatarUser'
 
 export default class AvatarScreen extends React.Component {
   static navigationOptions = {
@@ -12,11 +13,15 @@ export default class AvatarScreen extends React.Component {
     headerTintColor: '#fff',
   };
 
+  state = {
+    avatarId: 1,
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.avatarContainer}>
-          <Image style={styles.avatarImage} source={img}/>
+          <AvatarUser style={styles.avatarImage} avatarId={this.state.avatarId}/>
           <Text style={styles.avatarText}>AVATAR ESCOLHIDO</Text>
         </View>
 
@@ -28,7 +33,7 @@ export default class AvatarScreen extends React.Component {
               }}
               >
               <Card.Content style={styles.chooseContainer}>
-                <Image style={styles.chooseImage} source={img}/>
+                <AvatarUser style={styles.chooseImage} avatarId={0}/>
                 <Text style={styles.chooseText}>NIVEL 1</Text>
               </Card.Content>
             </Card>
@@ -38,7 +43,7 @@ export default class AvatarScreen extends React.Component {
               }}
               >
               <Card.Content style={styles.chooseContainer}>
-                <Image style={styles.chooseImage} source={img}/>
+                <AvatarUser style={styles.chooseImage} avatarId={1}/>
                 <Text style={styles.chooseText}>NIVEL 2</Text>
               </Card.Content>
             </Card>
@@ -48,7 +53,7 @@ export default class AvatarScreen extends React.Component {
               }}
               >
               <Card.Content style={styles.chooseContainer}>
-                <Image style={styles.chooseImage} source={img}/>
+                <AvatarUser style={styles.chooseImage} avatarId={2}/>
                 <Text style={styles.chooseText}>NIVEL 3</Text>
               </Card.Content>
             </Card>
@@ -61,7 +66,7 @@ export default class AvatarScreen extends React.Component {
               }}
               >
               <Card.Content style={styles.chooseContainer}>
-                <Image style={styles.chooseImage} source={img}/>
+                <AvatarUser style={styles.chooseImage} avatarId={3}/>
                 <Text style={styles.chooseText}>NIVEL 4</Text>
               </Card.Content>
             </Card>
@@ -71,7 +76,7 @@ export default class AvatarScreen extends React.Component {
               }}
               >
               <Card.Content style={styles.chooseContainer}>
-                <Image style={styles.chooseImage} source={img}/>
+                <AvatarUser style={styles.chooseImage} avatarId={4}/>
                 <Text style={styles.chooseText}>NIVEL 5</Text>
               </Card.Content>
             </Card>
@@ -81,7 +86,7 @@ export default class AvatarScreen extends React.Component {
               }}
               >
               <Card.Content style={styles.chooseContainer}>
-                <Image style={styles.chooseImage} source={img}/>
+                <AvatarUser style={styles.chooseImage} avatarId={5}/>
                 <Text style={styles.chooseText}>NIVEL 6</Text>
               </Card.Content>
             </Card>
