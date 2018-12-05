@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { List, Divider } from 'react-native-paper';
+import * as firebase from 'firebase';
 import HeaderUser from '../components/HeaderUser';
 
 export default class ProfileScreen extends React.Component {
@@ -52,7 +53,7 @@ export default class ProfileScreen extends React.Component {
             style={styles.listItem}
             left={props => <List.Icon {...props} icon="exit-to-app" />}
             title="Logout"
-            onPress={() => console.log('Pressed Logout Button')}
+            onPress={this._logOut}
             />
           <Divider />
         </ScrollView>
@@ -64,6 +65,10 @@ export default class ProfileScreen extends React.Component {
     console.log('Pressed Avatar Set Button');
     this.props.navigation.navigate('Avatar');
   };
+
+  _logOut = () => {
+    firebase.auth().signOut();
+  }
 }
 
 const styles = StyleSheet.create({
