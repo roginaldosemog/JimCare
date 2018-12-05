@@ -20,7 +20,7 @@ export default class ForgotPasswordScreen extends React.Component {
           color="#004488"
           onPress={this._backToSignIn}
           >
-          BACK TO SIGN IN
+          DONE, SEND ME BACK TO SIGN IN
         </Button>
       </View>
     );

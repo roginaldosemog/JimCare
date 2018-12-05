@@ -4,10 +4,21 @@ import { AppLoading, Asset, Font, Icon } from 'expo';
 import { Provider as PaperProvider } from 'react-native-paper';
 import AppNavigator from './src/navigation/AppNavigator';
 
+import ApiKeys from './constants/ApiKeys';
+import * as firebase from 'firebase';
+
 export default class App extends React.Component {
-  state = {
-    isLoadingComplete: false,
-  };
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoadingComplete: false,
+    };
+
+    //Initialize firebase
+    if (!firebase.apps.length) { firebase.initializeApp(ApiKeys.FirebaseConfig); }
+  }
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
